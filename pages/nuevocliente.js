@@ -11,6 +11,9 @@ const REGISTRAR_CLIENTE = gql`
             id
             nombre
             apellido
+            empresa
+            email
+            telefono
         }
     }
 `;
@@ -37,7 +40,7 @@ const NuevoCliente = () => {
     const [ nuevoCliente ] = useMutation(REGISTRAR_CLIENTE, {
         update(cache, { data: { nuevoCliente }}){
             //Obtener el objeto de cache que deseamos actualizar
-            const { obtenerClientesVendedor } = cache.readQuery({ query: OBTENER_CLIENTES_USUARIO })
+            const { obtenerClientesVendedor } = cache.readQuery({ query: OBTENER_CLIENTES_USUARIO });
             
             //Rescribimos el cache, (el cache nucna se debe modificar)
             cache.writeQuery({
