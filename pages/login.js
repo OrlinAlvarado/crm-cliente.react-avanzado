@@ -49,11 +49,13 @@ const Login = () => {
                        }
                     }
                 })
-    
+                
+                setTimeout(() => {
+                    const { token } = data.autenticarUsuario;
+                    localStorage.setItem('token', token);
+                }, 1000);
 
-                const { token } = data.autenticarUsuario;
 
-                localStorage.setItem('token', token);
                 setTimeout(() => {
                     router.push('/');
                 }, 500);

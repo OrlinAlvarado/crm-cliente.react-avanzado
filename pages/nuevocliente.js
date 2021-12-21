@@ -81,7 +81,6 @@ const NuevoCliente = () => {
         }),
         onSubmit: async valores => {
             try {
-                console.log(valores);
                 setMensaje('Guardando...')
 
                 const { data } = await nuevoCliente({

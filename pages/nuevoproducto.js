@@ -75,7 +75,6 @@ const NuevoProducto = () => {
         }),
         onSubmit: async valores => {
             try {
-                console.log(valores);
                 setMensaje('Guardando...')
 
                 const { nombre, existencia, precio } = valores;
